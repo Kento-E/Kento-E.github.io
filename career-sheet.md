@@ -13,7 +13,7 @@
   - [HTML5 Professional Certification Level.1 (Markup Professional)](https://html5exam.jp/outline/lv1_v2.html) (Sept. 2017)
 - CSS/Sass
   - [2nd grade Certified Skilled Worker of Web Design](http://www.webdesign.gr.jp/) (Dec. 2016)
-- JavaScript / jQuery / GAS
+- JavaScript / jQuery / Google Apps Script
 - PHP / Smarty
 - Google Analytics
   - [Google Analytics Individual Qualification](https://support.google.com/partners/answer/6089738) (May 2017)
@@ -54,9 +54,12 @@
 
 ## Work Experience
 ### Apr. 2017 - [SMARTVALUE Co., Ltd.](https://www.smartvalue.ad.jp/)
-Front-End Enginner
-- build CMS templates.
-- code CSS for PhoneGap Apps.
-- translate [Computer Science Education Movies](https://youtu.be/g1LC-nbnr34) into Japanese.
+**Front-End Engineer**
+- build CMS for municipalities.
+  - markup & build Smarty templates.
+  - implement front-end movements, functions with Sass, jQuery.
+- code Sass for PhoneGap apps.
+- make a Graph toll of Google Analitics with GAS, Google Charts API.
+- translate [learning movies of computer science](https://youtu.be/g1LC-nbnr34) into Japanese.
   
 >Forked from [okohs/Curriculum-Vitae-template](https://github.com/okohs/Curriculum-Vitae-template)
