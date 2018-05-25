@@ -13,8 +13,8 @@
   - [HTML5 Professional Certification Level.1 (Markup Professional)](https://html5exam.jp/outline/lv1_v2.html) (Sept. 2017)
 - CSS/Sass
   - [2nd grade Certified Skilled Worker of Web Design](http://www.webdesign.gr.jp/) (Dec. 2016)
-- JavaScript/jQuery
-- PHP/Smarty
+- JavaScript / jQuery / GAS
+- PHP / Smarty
 - Google Analytics
   - [Google Analytics Individual Qualification](https://support.google.com/partners/answer/6089738) (May 2017)
 
@@ -22,6 +22,7 @@
 - English
   - TOEIC score 680 (Dec. 2015)
   - [EIKEN Grade 2](http://www.eiken.or.jp/eiken/) (July 2011)
+
 ### Tools
 #### OS
 - Windows
@@ -50,5 +51,12 @@
 - Redmine
 #### Knowledge Sharing
 - Confluence
+
+## Work Experience
+### Apr. 2017 - [SMARTVALUE Co., Ltd.](https://www.smartvalue.ad.jp/)
+Front-End Enginner
+- build CMS templates.
+- code CSS for PhoneGap Apps.
+- translate [Computer Science Education Movies](https://youtu.be/g1LC-nbnr34) into Japanese.
   
 >Forked from [okohs/Curriculum-Vitae-template](https://github.com/okohs/Curriculum-Vitae-template)
