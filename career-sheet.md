@@ -52,6 +52,13 @@
 #### Knowledge Sharing
 - Confluence
 
+## Interested in
+- Data Science
+- Natural Language Processing
+- Machine Learning / Python
+- Database
+- Server-Side Engineering / Laravel / AWS
+
 ## Work Experience
 ### Apr. 2017 - [SMARTVALUE Co., Ltd.](https://www.smartvalue.ad.jp/)
 **Front-End Engineer**
