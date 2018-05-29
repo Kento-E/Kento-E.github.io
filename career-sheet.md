@@ -1,4 +1,4 @@
-# Carrer Sheet
+# Career Sheet
 ## Accounts
 |key|value|
 |---|-----|
