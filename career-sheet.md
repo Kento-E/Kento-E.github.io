@@ -4,7 +4,7 @@
 |---|-----|
 |Github|[Kento-E](https://github.com/Kento-E)|
 |Blog|[Github Pages](https://kento-e.github.io/)|
-|Chatwork|[shika-e](https://chatwork.com/shika-e/)|
+|Chatwork|[shika-e](https://chatwork.com/shika-e)|
 |Qiita|[@shika-e](http://qiita.com/shika-e)|
 |connpass|[shika-e](https://connpass.com/user/Kento-E/)|
 
