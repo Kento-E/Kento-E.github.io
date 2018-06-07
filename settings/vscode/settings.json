@@ -3,7 +3,6 @@
     "liveServer.settings.donotShowInfoMsg": true,
     "files.defaultLanguage": "markdown",
     "editor.fontFamily": "Ricty Diminished",
-    "editor.formatOnPaste": true
     // "liveSassCompile.settings.formats":[
     //     // This is Default.
     //     {
