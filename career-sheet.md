@@ -12,8 +12,8 @@
 ### Languages
 - HTML5
   - [HTML5 Professional Certification Level.1 (Markup Professional)](https://html5exam.jp/outline/lv1_v2.html) (Sept. 2017)
-- CSS/Sass
   - [2nd grade Certified Skilled Worker of Web Design](http://www.webdesign.gr.jp/) (Dec. 2016)
+- CSS/Sass
 - JavaScript / jQuery / Google Apps Script
 - PHP / Smarty
 - Google Analytics
@@ -23,6 +23,9 @@
 - English
   - TOEIC score 680 (Dec. 2015)
   - [EIKEN Grade 2](http://www.eiken.or.jp/eiken/) (July 2011)
+
+### Other Certifications
+- [2nd.Grade Color Coordinatior certified by Color Test institute](https://www.aft.or.jp/feature/)（July 2017）
 
 ### Tools
 #### OS
