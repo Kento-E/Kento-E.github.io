@@ -6,8 +6,11 @@ SetTitleMatchMode, 2 ; 文字列（中間一致）ウィンドウにマッチ
 SendMode Input ;入力した操作の再生速度が速くなるモード。
 SetWorkingDir %A_ScriptDir% ;スクリプトの作業ディレクトリ（相対パスを使うとき便利）
 
-!r::Send,{F2}   ;Alt+R 名前の変更
+!r::Send,{F2}   ;Alt+R F2キー、名前の変更
 !q::Send,!{F4}  ;Alt+Q アプリケーションの終了
 !^::Send,!{Up}     ;Alt+^ 一回層上に戻る
 ![::Send,!{Left}     ;Alt+[ 前に戻る
 !]::Send,!{Right}     ;Alt+] 先に進む
+!h::Send,{Home}     ;Alt+H Homeキー
+!e::Send,{End}     ;Alt+E Endキー
+!d::Send,{Delete}     ;Alt+D Deleteキー
