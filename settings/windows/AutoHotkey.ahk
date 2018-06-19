@@ -26,9 +26,11 @@ SetWorkingDir %A_ScriptDir% ;スクリプトの作業ディレクトリ（相対
 !\::Send,{Down}     ;Alt+\ ↓キー
 !h::Send,{Home}     ;Alt+H Homeキー
 ^!h::Send,^{Home}     ;Ctrl+Alt+H ドキュメントの最初に戻る
+^+!h::Send,^{Home}     ;Ctrl+Shift+Alt+H 最初まで全選択
 !e::Send,{End}     ;Alt+E Endキー
 ^!e::Send,^{End}     ;Ctrl+Alt+E ドキュメントの最後に進む
 !+e::Send,+{End}     ;Alt+E 行選択
+^+!e::Send,^{End}     ;Ctrl+Shift+Alt+E 最後まで全選択
 !d::Send,{Delete}     ;Alt+D Deleteキー
 !+d::           ;Alt+Shift+D 全選択削除
 Send,^a
