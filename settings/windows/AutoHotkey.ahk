@@ -40,7 +40,11 @@ return
 Send,^a
 Send,^c
 return
-!+v::           ;Alt+Shift+C 全選択貼り付け
+!+v::           ;Alt+Shift+V 全選択貼り付け
 Send,^a
 Send,^v
+return
+!+x::           ;Alt+Shift+x 全選択切り取り
+Send,^a
+Send,^x
 return
