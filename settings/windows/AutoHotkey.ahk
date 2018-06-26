@@ -6,6 +6,13 @@ SetTitleMatchMode, 2 ; 文字列（中間一致）ウィンドウにマッチ
 SendMode Input ;入力した操作の再生速度が速くなるモード。
 SetWorkingDir %A_ScriptDir% ;スクリプトの作業ディレクトリ（相対パスを使うとき便利）
 
+sc029::Send,{Esc}				;半角／全角キー = Escキー
+vk1C::Send,{sc029}			;変換キー = 半角／全角キー
+sc070::Send,{AppsKey}		;カタカナ／ひらがなキー = アプリケーションキー
+
+; AppsKey:Send,MouseClick, Right
+vk1C & Space::Send,{Blind}{Enter} 	;変換+スペース = エンターキーの動作をさせる
+
 !1::Send,{F1}   ;Alt+1 F1キー
 !2::Send,{F2}   ;Alt+2 F2キー
 !3::Send,{F3}   ;Alt+3 F3キー
@@ -31,6 +38,7 @@ SetWorkingDir %A_ScriptDir% ;スクリプトの作業ディレクトリ（相対
 ^!e::Send,^{End}     ;Ctrl+Alt+E ドキュメントの最後に進む
 !+e::Send,+{End}     ;Alt+E 行選択
 ^+!e::Send,^{End}     ;Ctrl+Shift+Alt+E 最後まで全選択
+!b::Send,{BackSpace}     ;Alt+B BackSpaceキー
 !d::Send,{Delete}     ;Alt+D Deleteキー
 !+d::           ;Alt+Shift+D 全選択削除
 Send,^a
