@@ -6,13 +6,22 @@ SetTitleMatchMode, 2 ; 文字列（中間一致）ウィンドウにマッチ
 SendMode Input ;入力した操作の再生速度が速くなるモード。
 SetWorkingDir %A_ScriptDir% ;スクリプトの作業ディレクトリ（相対パスを使うとき便利）
 
+;単一キーの置き換え
 sc029::Send,{Esc}				;半角／全角キー = Escキー
 vk1C::Send,{sc029}			;変換キー = 半角／全角キー
 sc070::Send,{AppsKey}		;カタカナ／ひらがなキー = アプリケーションキー
-
 ; AppsKey:Send,MouseClick, Right
+
 vk1C & Space::Send,{Blind}{Enter} 	;変換+スペース = エンターキーの動作をさせる
 
+;矢印キー
+!h::Send,{Left}	;Alt+ h = 「←」
+!l::Send,{Right}	;Alt+ l = 「→」
+!k::Send,{Up}	;Alt+ k = 「↑」
+^!k::Send,!{Up}     ;Ctrl+Alt+ k = 一回層上に戻る
+!j::Send,{Down}	;Alt+ \ = 「↓」
+
+;ファンクションキー
 !1::Send,{F1}   ;Alt+1 F1キー
 !2::Send,{F2}   ;Alt+2 F2キー
 !3::Send,{F3}   ;Alt+3 F3キー
@@ -24,22 +33,24 @@ vk1C & Space::Send,{Blind}{Enter} 	;変換+スペース = エンターキーの�
 !8::Send,{F8}   ;Alt+8 F8キー
 !9::Send,{F9}   ;Alt+9 F9キー
 !0::Send,{F12}   ;Alt+0 F12キー
+
+;組み合わせ
 !q::Send,!{F4}  ;Alt+Q アプリケーションの終了
-!^::Send,!{Up}     ;Alt+^ 一回層上に戻る
 ![::Send,!{Left}     ;Alt+[ 前に戻る
 !+[::Send,^+{Left}     ;Alt+Shift+[ 前方の単語選択
 !]::Send,!{Right}     ;Alt+] 先に進む
 !+]::Send,^+{Right}     ;Alt+Shift+] 後方の単語選択
-!\::Send,{Down}     ;Alt+\ ↓キー
-!h::Send,{Home}     ;Alt+H Homeキー
-^!h::Send,^{Home}     ;Ctrl+Alt+H ドキュメントの最初に戻る
-^+!h::Send,^{Home}     ;Ctrl+Shift+Alt+H 最初まで全選択
+!^::Send,{Home}     ;Alt+H Homeキー
+^!^::Send,^{Home}     ;Ctrl+Alt+H ドキュメントの最初に戻る
+^+!^::Send,^{Home}     ;Ctrl+Shift+Alt+H 最初まで全選択
 !e::Send,{End}     ;Alt+E Endキー
 ^!e::Send,^{End}     ;Ctrl+Alt+E ドキュメントの最後に進む
 !+e::Send,+{End}     ;Alt+E 行選択
 ^+!e::Send,^{End}     ;Ctrl+Shift+Alt+E 最後まで全選択
 !b::Send,{BackSpace}     ;Alt+B BackSpaceキー
 !d::Send,{Delete}     ;Alt+D Deleteキー
+
+;複数処理
 !+d::           ;Alt+Shift+D 全選択削除
 Send,^a
 Send,{Delete}
