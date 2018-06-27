@@ -15,11 +15,14 @@ AppsKey::Send,{RButton}	;Appskey = 右クリック
 vk1C & Space::Send,{Blind}{Enter} 	;変換+スペース = エンターキーの動作をさせる
 
 !h::Send,{Left}	;Alt+ h = 「←」
+	!+h::Send,+{Left}	;Alt+Shift+ h = 「Shift+←」
 !l::Send,{Right}	;Alt+ l = 「→」
+	!+l::Send,+{Right}	;Alt+Shift+ l = 「Shift+→」
 !k::Send,{Up}				;Alt+ k = 「↑」
-!^k::Send,!{Up}     ;Ctrl+Alt+ k = 一回層上に戻る
-!j::Send,{Down}	;Alt+ \ = 「↓」
-!+j::Send,{Down}	;Alt+ \ = 「↓」
+	!+k::Send,+{Up}				;Alt+Shift+ k = 「Shift+↑」
+	<!>!k::Send,!{Up}     ;LAlt+RAlt+ k = 一回層上に戻る
+!j::Send,{Down}	;Alt+ j = 「↓」
+	!+j::Send,+{Down}	;Alt+Shift+j = 「Shift+↓」
 
 ;ファンクションキー
 !1::Send,{F1}   ;Alt+1 F1キー
@@ -27,7 +30,7 @@ vk1C & Space::Send,{Blind}{Enter} 	;変換+スペース = エンターキーの�
 !3::Send,{F3}   ;Alt+3 F3キー
 !4::Send,{F4}   ;Alt+4 F4キー
 !5::Send,{F5}   ;Alt+5 F5キー
-^5::Send,^{F5}   ;Ctrl+5 Ctrl+F5キー、キャッシュを削除してページ更新
+	^5::Send,^{F5}   ;Ctrl+5 Ctrl+F5キー、キャッシュを削除してページ更新
 !6::Send,{F6}   ;Alt+6 F6キー
 !7::Send,{F7}   ;Alt+7 F7キー
 !8::Send,{F8}   ;Alt+8 F8キー
@@ -38,25 +41,31 @@ vk1C & Space::Send,{Blind}{Enter} 	;変換+スペース = エンターキーの�
 
 ;組み合わせ
 !q::Send,!{F4}  ;Alt+Q アプリケーションの終了
-![::Send,!{Left}     ;Alt+[ 前に戻る
-!+[::Send,^+{Left}     ;Alt+Shift+[ 前方の単語選択
-!]::Send,!{Right}     ;Alt+] 先に進む
-!+]::Send,^+{Right}     ;Alt+Shift+] 後方の単語選択
-LWin & ^::Send,{Home}     ;Alt+H Homeキー
-^!^::Send,^{Home}     ;Ctrl+Alt+H ドキュメントの最初に戻る
-^+!^::Send,^{Home}     ;Ctrl+Shift+Alt+H 最初まで全選択
-!e::Send,{End}     ;Alt+E Endキー
-^!e::Send,^{End}     ;Ctrl+Alt+E ドキュメントの最後に進む
-!+e::Send,+{End}     ;Alt+E 行選択
-^+!e::Send,^{End}     ;Ctrl+Shift+Alt+E 最後まで全選択
+
 !b::Send,{BackSpace}     ;Alt+B BackSpaceキー
+
 !d::Send,{Delete}     ;Alt+D Deleteキー
+	!+d::           ;Alt+Shift+D 全選択削除
+	Send,^a
+	Send,{Delete}
+	return
+
+![::Send,!{Left}     ;Alt+[ 前に戻る
+	!+[::Send,^+{Left}     ;Alt+Shift+[ 前方の単語選択
+
+!]::Send,!{Right}     ;Alt+] 先に進む
+	!+]::Send,^+{Right}     ;Alt+Shift+] 後方の単語選択
+
+LWin & H::Send,{Home}     ;Win+H Homeキー
+	; ^LWin & H::Send,^{Home}     ;Win+Ctrl+H ドキュメントの最初に戻る
+	; 	LWin & ^+H::Send,^+{Home}     ;Ctrl+Shift+Alt+H 最初まで全選択
+
+!e::Send,{End}     ;Alt+E Endキー
+	^!e::Send,^{End}     ;Ctrl+Alt+E ドキュメントの最後に進む
+	!+e::Send,+{End}     ;Alt+E 行選択
+	^+!e::Send,^{End}     ;Ctrl+Shift+Alt+E 最後まで全選択
 
 ;複数処理
-!+d::           ;Alt+Shift+D 全選択削除
-Send,^a
-Send,{Delete}
-return
 !+c::           ;Alt+Shift+C 全選択コピー
 Send,^a
 Send,^c
