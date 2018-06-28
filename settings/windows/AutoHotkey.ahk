@@ -8,12 +8,11 @@ SetWorkingDir %A_ScriptDir% ;スクリプトの作業ディレクトリ（相対
 
 ;単一キーの置き換え
 sc029::Send,{Esc}				;半角／全角キー = Escキー
+sc03a::Ctrl 						;英数キー = Ctrl
+	; Capslock::Ctrl
 vk1C::Send,{sc029}			;変換キー = 半角／全角キー
 sc070::Send,{AppsKey}		;カタカナ／ひらがなキー = アプリケーションキー
-AppsKey::Send,{RButton}	;Appskey = 右クリック
-
-vk1C & Space::Send,{Blind}{Enter} 	;変換+スペース = エンターキーの動作をさせる
-
+; Appskey::Send,{Enter} 	;Appskey = エンターキー
 !h::Send,{Left}	;Alt+ h = 「←」
 	!+h::Send,+{Left}	;Alt+Shift+ h = 「Shift+←」
 !l::Send,{Right}	;Alt+ l = 「→」
@@ -23,6 +22,11 @@ vk1C & Space::Send,{Blind}{Enter} 	;変換+スペース = エンターキーの�
 	<!>!k::Send,!{Up}     ;LAlt+RAlt+ k = 一回層上に戻る
 !j::Send,{Down}	;Alt+ j = 「↓」
 	!+j::Send,+{Down}	;Alt+Shift+j = 「Shift+↓」
+
+;マウス操作
+vk1d::LButton						;無変換キー = 左クリック
+AppsKey::RButton				;Appskey = 右クリック
+
 
 ;ファンクションキー
 !1::Send,{F1}   ;Alt+1 F1キー
@@ -56,9 +60,9 @@ vk1C & Space::Send,{Blind}{Enter} 	;変換+スペース = エンターキーの�
 !]::Send,!{Right}     ;Alt+] 先に進む
 	!+]::Send,^+{Right}     ;Alt+Shift+] 後方の単語選択
 
-LWin & H::Send,{Home}     ;Win+H Homeキー
-	; ^LWin & H::Send,^{Home}     ;Win+Ctrl+H ドキュメントの最初に戻る
-	; 	LWin & ^+H::Send,^+{Home}     ;Ctrl+Shift+Alt+H 最初まで全選択
+<#H::Send,{Home}     ;Win+H Homeキー
+	^<#H::Send,^{Home}     ;Win+Ctrl+H ドキュメントの最初に戻る
+		<#^+H::Send,^+{Home}     ;Ctrl+Shift+Alt+H 最初まで全選択
 
 !e::Send,{End}     ;Alt+E Endキー
 	^!e::Send,^{End}     ;Ctrl+Alt+E ドキュメントの最後に進む
