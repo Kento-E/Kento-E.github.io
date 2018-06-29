@@ -8,11 +8,11 @@ SetWorkingDir %A_ScriptDir% ;スクリプトの作業ディレクトリ（相対
 
 ;単一キーの置き換え
 sc029::Send,{Esc}				;半角／全角キー = Escキー
-sc03a::Ctrl 						;英数キー = Ctrl
+sc03a::LCtrl 						;英数キー = Ctrl
+	sc03a up::Send,{LCtrl up} 						;英数キー = Ctrl
 	; Capslock::Ctrl
-vk1C::Send,{sc029}			;変換キー = 半角／全角キー
+vk1C::Send,{sc029}	 		;変換キー = 半角／全角キー
 sc070::Send,{AppsKey}		;カタカナ／ひらがなキー = アプリケーションキー
-; Appskey::Send,{Enter} 	;Appskey = エンターキー
 !h::Send,{Left}	;Alt+ h = 「←」
 	!+h::Send,+{Left}	;Alt+Shift+ h = 「Shift+←」
 !l::Send,{Right}	;Alt+ l = 「→」
@@ -24,10 +24,11 @@ sc070::Send,{AppsKey}		;カタカナ／ひらがなキー = アプリケーシ�
 	!+j::Send,+{Down}	;Alt+Shift+j = 「Shift+↓」
 
 ;マウス操作
-vk1d::LButton						;無変換キー = 左クリック
-AppsKey::RButton				;Appskey = 右クリック
-
-
+vk1d::LButton											;無変換キー = 左クリック
+	vk1d up::Send, {LButton up}		
+	^vk1d::Send,^{LButton}											;Ctrl+無変換キー = 左クリック
+AppsKey::RButton									;Appskey = 右クリック
+	AppsKey up::Send,{RButton up}	
 ;ファンクションキー
 !1::Send,{F1}   ;Alt+1 F1キー
 !2::Send,{F2}   ;Alt+2 F2キー
@@ -39,12 +40,15 @@ AppsKey::RButton				;Appskey = 右クリック
 !7::Send,{F7}   ;Alt+7 F7キー
 !8::Send,{F8}   ;Alt+8 F8キー
 !9::Send,{F9}   ;Alt+9 F9キー
-!0::Send,{F10}   ;Alt+0 F10キー
-!-::Send,{F11}   ;Alt+- F11キー
-!^::Send,{F12}   ;Alt+^ F12キー
+; !0::Send,{F10}   ;Alt+0 F10キー
+; !-::Send,{F11}   ;Alt+- F11キー
+!0::Send,{F12}   ;Alt+^ F12キー
 
 ;組み合わせ
 !q::Send,!{F4}  ;Alt+Q アプリケーションの終了
+
+^Space::Send,{Enter} 	;Ctrl+Space = エンターキー
+	<^>^Space::Send,^{Enter} 	;LCtrl+RCtrl+Space = エンターキー
 
 !b::Send,{BackSpace}     ;Alt+B BackSpaceキー
 
@@ -60,15 +64,6 @@ AppsKey::RButton				;Appskey = 右クリック
 !]::Send,!{Right}     ;Alt+] 先に進む
 	!+]::Send,^+{Right}     ;Alt+Shift+] 後方の単語選択
 
-<#H::Send,{Home}     ;Win+H Homeキー
-	^<#H::Send,^{Home}     ;Win+Ctrl+H ドキュメントの最初に戻る
-		<#^+H::Send,^+{Home}     ;Ctrl+Shift+Alt+H 最初まで全選択
-
-!e::Send,{End}     ;Alt+E Endキー
-	^!e::Send,^{End}     ;Ctrl+Alt+E ドキュメントの最後に進む
-	!+e::Send,+{End}     ;Alt+E 行選択
-	^+!e::Send,^{End}     ;Ctrl+Shift+Alt+E 最後まで全選択
-
 ;複数処理
 !+c::           ;Alt+Shift+C 全選択コピー
 Send,^a
@@ -82,3 +77,14 @@ return
 Send,^a
 Send,^x
 return
+
+; vim風コマンド
+!^::Send,{Home}     ;Alt + ^ = Homeキー
+	^!^::Send,+{Home}     ;Ctrl+Alt+^ ドキュメントの最初に戻る
+	!+^::Send,+{Home}     ;Alt+Shift+^ 行選択
+	!^+^::Send,^+{Home}     ;Ctrl+Shift+Alt+^ 最初まで全選択
+
+!\::Send,{End}     ;Alt+$ Endキー
+	^!\::Send,^{End}     ;Ctrl+Alt+\ ドキュメントの最後に進む
+	!+\::Send,+{End}     ;Alt+Shift+\ 行選択
+	^+!\::Send,^{End}     ;Ctrl+Shift+Alt+\ 最後まで全選択
