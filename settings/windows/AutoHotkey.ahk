@@ -6,6 +6,8 @@ SetTitleMatchMode, 2 ; 文字列（中間一致）ウィンドウにマッチ
 SendMode Input ;入力した操作の再生速度が速くなるモード。
 SetWorkingDir %A_ScriptDir% ;スクリプトの作業ディレクトリ（相対パスを使うとき便利）
 
+;============================================================================================== 
+
 ;単一キーの置き換え
 sc029::Send,{Esc}				;半角／全角キー = Escキー
 sc03a::LCtrl 						;英数キー = Ctrl
@@ -26,14 +28,16 @@ sc070::Send,{AppsKey}		;カタカナ／ひらがなキー = アプリケーシ�
 ;マウス操作
 vk1d::LButton											;無変換キー = 左クリック
 	vk1d up::Send, {LButton up}		
-	^vk1d::Send,^{LButton}											;Ctrl+無変換キー = 左クリック
+	^vk1d::Send,^{LButton}											;Ctrl+無変換キー = Ctrl+左クリック
 AppsKey::RButton									;Appskey = 右クリック
 	AppsKey up::Send,{RButton up}	
+
 ;ファンクションキー
 !1::Send,{F1}   ;Alt+1 F1キー
 !2::Send,{F2}   ;Alt+2 F2キー
 !3::Send,{F3}   ;Alt+3 F3キー
 !4::Send,{F4}   ;Alt+4 F4キー
+	!^4::Send,^{F4}   ;Alt+Ctrl+4 Ctrl+F4キー
 !5::Send,{F5}   ;Alt+5 F5キー
 	^5::Send,^{F5}   ;Ctrl+5 Ctrl+F5キー、キャッシュを削除してページ更新
 !6::Send,{F6}   ;Alt+6 F6キー
@@ -48,7 +52,9 @@ AppsKey::RButton									;Appskey = 右クリック
 !q::Send,!{F4}  ;Alt+Q アプリケーションの終了
 
 ^Space::Send,{Enter} 	;Ctrl+Space = エンターキー
-	<^>^Space::Send,^{Enter} 	;LCtrl+RCtrl+Space = エンターキー
+	<^>^Space::Send,^{Enter} 	;LCtrl+RCtrl+Space = Ctrl+エンターキー
+	^+Space::Send,+{Enter} 	;Shift+Ctrl+Space = Shift+エンターキー
+	!^Space::Send,!^{Enter} 	;Alt+Ctrl+Space = Alt+Ctrl+エンターキー
 
 !b::Send,{BackSpace}     ;Alt+B BackSpaceキー
 
@@ -88,3 +94,34 @@ return
 	^!\::Send,^{End}     ;Ctrl+Alt+\ ドキュメントの最後に進む
 	!+\::Send,+{End}     ;Alt+Shift+\ 行選択
 	^+!\::Send,^{End}     ;Ctrl+Shift+Alt+\ 最後まで全選択
+
+
+;ホットストリング
+;https://qiita.com/sta/items/f92321e6d30f677008ff
+
+#Hotstring *	;m@@でメールアドレスを入力
+#Hotstring O
+::m@@::kento.esashika@g.smartvalue.ad.jp
+
+#Hotstring *	;d//で現在日付を入力
+#Hotstring O
+::d//::
+    FormatTime, now,, yyyy/MM/dd ;HH:mm:ss
+    Clipboard = %now%
+    Send,^v
+return
+
+get_dowstr() ;w[[で(曜)を入力
+{
+    FormatTime, downum,, WDay
+    dowtable := "SunMonTueWedThuFriSat"
+    startpos := ((downum-1)*3)+1
+    dowstr := ""
+    StringMid, dowstr, dowtable, %startpos%, 3
+    return dowstr
+}
+::w[[::
+    dowstr := get_dowstr()
+    Clipboard = (%dowstr%)
+    Send,^v
+return
