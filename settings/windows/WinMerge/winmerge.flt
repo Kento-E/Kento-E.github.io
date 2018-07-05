@@ -37,6 +37,6 @@ d: \\\.hg$ ## Mercurial repository
 #######################################################
 ### Original Settings
 
-d: sass ## sass directory
+d: sass ## /sass/ directory
 f: Thumbs.db ## Thumbs.db file
 f: \.DS_store ## .DS_store file

@@ -110,8 +110,7 @@ return
 #Hotstring O
 ::d//::
     FormatTime, now,, yyyy/MM/dd ;HH:mm:ss
-    Clipboard = %now%
-    Send,^v
+    Send,%now%
 return
 
 get_dowstr() ;w[[で(曜)を入力
@@ -125,6 +124,5 @@ get_dowstr() ;w[[で(曜)を入力
 }
 ::w[[::
     dowstr := get_dowstr()
-    Clipboard = (%dowstr%)
-    Send,^v
+    Send,(%dowstr%)
 return
