@@ -106,10 +106,17 @@ return
 #Hotstring O
 ::m@@::kento.esashika@g.smartvalue.ad.jp
 
+#Hotstring *	;y//で現在日付を入力
+#Hotstring O
+::y//::
+    FormatTime, now,, yyyy/MM/dd ;HH:mm:ss
+    Send,%now%
+return
+
 #Hotstring *	;d//で現在日付を入力
 #Hotstring O
 ::d//::
-    FormatTime, now,, yyyy/MM/dd ;HH:mm:ss
+    FormatTime, now,, MM/dd ;HH:mm:ss
     Send,%now%
 return
 
