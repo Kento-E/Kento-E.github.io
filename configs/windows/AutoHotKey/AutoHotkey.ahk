@@ -13,7 +13,7 @@ sc029::Send,{Esc}				;半角／全角キー = Escキー
 sc03a::LCtrl 						;英数キー = Ctrl
 	sc03a up::Send,{LCtrl up} 						;英数キー = Ctrl
 	; Capslock::Ctrl
-vk1C::Send,{sc029}	 		;変換キー = 半角／全角キー
+vk1c::Send,{sc029}	 		;変換キー = 半角／全角キー
 sc070::Send,{AppsKey}		;カタカナ／ひらがなキー = アプリケーションキー
 !h::Send,{Left}	;Alt+ h = 「←」
 	!+h::Send,+{Left}	;Alt+Shift+ h = 「Shift+←」
@@ -106,30 +106,30 @@ return
 #Hotstring O
 ::m@@::kento.esashika@g.smartvalue.ad.jp
 
-#Hotstring *	;y//で現在日付を入力
+#Hotstring *	;y/dで現在年月日を入力
 #Hotstring O
-::y//::
+::y/d::
     FormatTime, now,, yyyy/MM/dd ;HH:mm:ss
     Send,%now%
 return
 
-#Hotstring *	;d//で現在日付を入力
+#Hotstring *	;m/dで現在日付を入力
 #Hotstring O
-::d//::
-    FormatTime, now,, MM/dd ;HH:mm:ss
+::m/d::
+    FormatTime, now,, M/d
     Send,%now%
 return
 
-get_dowstr() ;w[[で(曜)を入力
-{
-    FormatTime, downum,, WDay
-    dowtable := "SunMonTueWedThuFriSat"
-    startpos := ((downum-1)*3)+1
-    dowstr := ""
-    StringMid, dowstr, dowtable, %startpos%, 3
-    return dowstr
-}
-::w[[::
-    dowstr := get_dowstr()
-    Send,(%dowstr%)
+#Hotstring *	;(d)で現在曜日を入力
+#Hotstring O
+::(d)::
+    FormatTime, now,, ddd
+    Send,(%now%)
+return
+
+#Hotstring *	;h:mで現在時刻を入力
+#Hotstring O
+::h:m::
+    FormatTime, now,, Time
+    Send,%now%		
 return
