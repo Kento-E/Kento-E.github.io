@@ -1,1 +1,0 @@
-{"virtualbox":{"/home/vagrant":{"guestpath":"/home/vagrant","hostpath":"C:/Users/kento.esashika/octopress/_deploy/environments/windows/vagrant/centos/vagrant","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"C:/Users/kento.esashika/octopress/_deploy/environments/windows/vagrant/centos","disabled":false,"__vagrantfile":true}}}
