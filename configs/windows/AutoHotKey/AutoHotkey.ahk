@@ -127,6 +127,13 @@ return
     Send,(%now%)
 return
 
+#Hotstring *	;m(dで現在日付と曜日を入力
+#Hotstring O
+::m(d::
+    FormatTime, now,, M/d(ddd)
+    Send,%now%
+return
+
 #Hotstring *	;h:mで現在時刻を入力
 #Hotstring O
 ::h:m::
