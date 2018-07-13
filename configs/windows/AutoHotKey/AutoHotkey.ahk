@@ -89,7 +89,7 @@ return
 
 ; vim風コマンド
 !^::Send,{Home}     ;Alt + ^ = Homeキー
-	^!^::Send,+{Home}     ;Ctrl+Alt+^ ドキュメントの最初に戻る
+	^!^::Send,^{Home}     ;Ctrl+Alt+^ ドキュメントの最初に戻る
 	!+^::Send,+{Home}     ;Alt+Shift+^ 行選択
 	!^+^::Send,^+{Home}     ;Ctrl+Shift+Alt+^ 最初まで全選択
 
