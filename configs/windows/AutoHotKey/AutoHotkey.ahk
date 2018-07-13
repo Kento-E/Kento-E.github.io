@@ -40,7 +40,7 @@ AppsKey::RButton									;Appskey = 右クリック
 !4::Send,{F4}   ;Alt+4 F4キー
 	!^4::Send,^{F4}   ;Alt+Ctrl+4 Ctrl+F4キー
 !5::Send,{F5}   ;Alt+5 F5キー
-	^5::Send,^{F5}   ;Ctrl+5 Ctrl+F5キー、キャッシュを削除してページ更新
+	!^5::Send,^{F5}   ;Alt+Ctrl+5 Ctrl+F5キー、キャッシュを削除してページ更新
 	^+5::Send,^{F5}   ;Ctrl+Shift+5 Ctrl+Shift+F5キー、キャッシュを削除してページ更新
 !6::Send,{F6}   ;Alt+6 F6キー
 !7::Send,{F7}   ;Alt+7 F7キー
