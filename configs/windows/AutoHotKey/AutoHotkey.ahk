@@ -109,34 +109,43 @@ return
 #Hotstring *	;y/dで現在年月日を入力
 #Hotstring O
 ::y/d::
-    FormatTime, now,, yyyy/MM/dd ;HH:mm:ss
-    Send,%now%
+	FormatTime, now,, yyyy/MM/dd ;HH:mm:ss
+	Send,%now%
 return
 
 #Hotstring *	;m/dで現在日付を入力
 #Hotstring O
 ::m/d::
-    FormatTime, now,, M/d
-    Send,%now%
+	FormatTime, now,, M/d
+	Send,%now%
 return
 
 #Hotstring *	;(d)で現在曜日を入力
 #Hotstring O
 ::(d)::
-    FormatTime, now,, ddd
-    Send,(%now%)
+	FormatTime, now,, ddd
+	Send,(%now%)
 return
 
 #Hotstring *	;m(dで現在日付と曜日を入力
 #Hotstring O
 ::m(d::
-    FormatTime, now,, M/d(ddd)
-    Send,%now%
+	FormatTime, now,, M/d(ddd)
+	Send,%now%
 return
 
 #Hotstring *	;h:mで現在時刻を入力
 #Hotstring O
 ::h:m::
-    FormatTime, now,, Time
-    Send,%now%		
+	FormatTime, now,, Time
+	Send,%now%		
+return
+
+#Hotstring *	;t(dで翌日日付と曜日を入力
+#Hotstring O
+::t(d::
+	tomorrow := a_now 
+	tomorrow += 1, days
+	FormatTime, tomorrow, %tomorrow%, M/d(ddd)
+	Send,%tomorrow%
 return
