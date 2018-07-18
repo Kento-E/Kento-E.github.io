@@ -1,0 +1,14 @@
+current directory: C:/Users/kento.esashika/octopress/vendor/bundle/ruby/2.4.0/gems/posix-spawn-0.3.13/ext
+C:/Ruby24-x64/bin/ruby.exe -r ./siteconf20180524-12924-2ki4ca.rb extconf.rb
+
+current directory: C:/Users/kento.esashika/octopress/vendor/bundle/ruby/2.4.0/gems/posix-spawn-0.3.13/ext
+make "DESTDIR=" clean
+make: *** ターゲット 'clean' を make するルールがありません.  中止.
+
+current directory: C:/Users/kento.esashika/octopress/vendor/bundle/ruby/2.4.0/gems/posix-spawn-0.3.13/ext
+make "DESTDIR="
+make: 'default' に対して行うべき事はありません.
+
+current directory: C:/Users/kento.esashika/octopress/vendor/bundle/ruby/2.4.0/gems/posix-spawn-0.3.13/ext
+make "DESTDIR=" install
+make: 'install' に対して行うべき事はありません.
