@@ -149,3 +149,12 @@ return
 	FormatTime, tomorrow, %tomorrow%, M/d(ddd)
 	Send,%tomorrow%
 return
+
+#Hotstring *	;p(dで昨日日付と曜日を入力
+#Hotstring O
+::p(d::
+	yesterday := a_now 
+	yesterday += -1, days
+	FormatTime, yesterday, %yesterday%, M/d(ddd)
+	Send,%yesterday%
+return
