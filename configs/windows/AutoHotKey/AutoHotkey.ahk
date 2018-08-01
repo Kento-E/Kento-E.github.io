@@ -13,8 +13,8 @@ sc029::Send,{Esc}				;半角／全角キー = Escキー
 sc03a::LCtrl 						;英数キー = Ctrl
 	sc03a up::Send,{LCtrl up} 						;英数キー = Ctrl
 	; Capslock::Ctrl
-vk1c::Send,{sc029}	 		;変換キー = 半角／全角キー
-sc070::Send,{AppsKey}		;カタカナ／ひらがなキー = アプリケーションキー
+; vk1c::Send,{sc029}	 		;変換キー = 半角／全角キー
+sc070::Send,{sc029}		;カタカナ／ひらがなキー = 半角／全角キー
 !h::Send,{Left}	;Alt+ h = 「←」
 	!+h::Send,+{Left}	;Alt+Shift+ h = 「Shift+←」
 !l::Send,{Right}	;Alt+ l = 「→」
@@ -24,13 +24,14 @@ sc070::Send,{AppsKey}		;カタカナ／ひらがなキー = アプリケーシ�
 	<!>!k::Send,!{Up}     ;LAlt+RAlt+ k = 一回層上に戻る
 !j::Send,{Down}	;Alt+ j = 「↓」
 	!+j::Send,+{Down}	;Alt+Shift+j = 「Shift+↓」
+	<!>!j::Send,!{Down}     ;LAlt+RAlt+ j = 「Alt+↓」
 
 ;マウス操作
 vk1d::LButton											;無変換キー = 左クリック
 	vk1d up::Send, {LButton up}		
 	^vk1d::Send,^{LButton}											;Ctrl+無変換キー = Ctrl+左クリック
-AppsKey::RButton									;Appskey = 右クリック
-	AppsKey up::Send,{RButton up}	
+>^AppsKey::Send,{RButton down}									;LCtrl+Appskey = 右クリック
+	>^AppsKey up::Send,{RButton up}	
 
 ;ファンクションキー
 !1::Send,{F1}   ;Alt+1 F1キー
