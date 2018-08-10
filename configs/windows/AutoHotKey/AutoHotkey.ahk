@@ -59,14 +59,14 @@ vk1d::LButton											;無変換キー = 左クリック
 	^+Space::Send,+{Enter} 	;Shift+Ctrl+Space = Shift+エンターキー
 	!^Space::Send,!^{Enter} 	;Alt+Ctrl+Space = Alt+Ctrl+エンターキー
 
-!b::Send,{BackSpace}     ;Alt+B BackSpaceキー
+!x::Send,{Delete}     ;Alt+X Deleteキー
+!+x::Send,{BackSpace}     ;Alt+Shift+X BackSpaceキー
 
-!d::Send,{Delete}     ;Alt+D Deleteキー
-	!^d::Send,^{Delete}     ;AltCtrl+D Ctrl+Deleteキー
-	!+d::           ;Alt+Shift+D 全選択削除
+!^d::Send,^{Delete}     ;AltCtrl+D Ctrl+Deleteキー
+!+d::           ;Alt+Shift+D 全選択削除
 	Send,^a
 	Send,{Delete}
-	return
+return
 
 ![::Send,!{Left}     ;Alt+[ 前に戻る
 	!+[::Send,^+{Left}     ;Alt+Shift+[ 前方の単語選択
@@ -83,7 +83,7 @@ return
 Send,^a
 Send,^v
 return
-!+x::           ;Alt+Shift+x 全選択切り取り
+!^+x::           ;Alt+Ctrl+Shift+x 全選択切り取り
 Send,^a
 Send,^x
 return
