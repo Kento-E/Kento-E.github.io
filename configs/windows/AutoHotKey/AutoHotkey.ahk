@@ -8,7 +8,7 @@ SetWorkingDir %A_ScriptDir% ;スクリプトの作業ディレクトリ（相対
 
 ;============================================================================================== 
 
-;単一キーの置き換え
+;単一キーの置き換え	============================================================================
 sc029::Send,{Esc}				;半角／全角キー = Escキー
 sc03a::LCtrl 						;英数キー = Ctrl
 	sc03a up::Send,{LCtrl up} 						;英数キー = Ctrl
@@ -33,7 +33,7 @@ vk1d::LButton											;無変換キー = 左クリック
 >^AppsKey::Send,{RButton down}									;LCtrl+Appskey = 右クリック
 	>^AppsKey up::Send,{RButton up}	
 
-;ファンクションキー
+;ファンクションキー	============================================================================
 !1::Send,{F1}   ;Alt+1 F1キー
 !2::Send,{F2}   ;Alt+2 F2キー
 !3::Send,{F3}   ;Alt+3 F3キー
@@ -51,7 +51,7 @@ vk1d::LButton											;無変換キー = 左クリック
 ; !-::Send,{F11}   ;Alt+- F11キー
 !0::Send,{F12}   ;Alt+^ F12キー
 
-;組み合わせ
+;組み合わせ	============================================================================
 !q::Send,!{F4}  ;Alt+Q アプリケーションの終了
 
 <^Space::Send,{Enter} 	;Ctrl+Space = エンターキー
@@ -62,33 +62,62 @@ vk1d::LButton											;無変換キー = 左クリック
 !x::Send,{Delete}     ;Alt+X Deleteキー
 !+x::Send,{BackSpace}     ;Alt+Shift+X BackSpaceキー
 
-!^d::Send,^{Delete}     ;AltCtrl+D Ctrl+Deleteキー
-!+d::           ;Alt+Shift+D 全選択削除
-	Send,^a
-	Send,{Delete}
-return
-
 ![::Send,!{Left}     ;Alt+[ 前に戻る
 	!+[::Send,^+{Left}     ;Alt+Shift+[ 前方の単語選択
 
 !]::Send,!{Right}     ;Alt+] 先に進む
 	!+]::Send,^+{Right}     ;Alt+Shift+] 後方の単語選択
 
-;複数処理
-!+c::           ;Alt+Shift+C 全選択コピー
-Send,^a
-Send,^c
-return
-!+v::           ;Alt+Shift+V 全選択貼り付け
-Send,^a
-Send,^v
-return
-!^+x::           ;Alt+Ctrl+Shift+x 全選択切り取り
-Send,^a
-Send,^x
+
+;全選択系処理	============================================================================
+$^d::												;Ctrl+A+D 全選択削除
+	If GetKeyState("a", "P")
+	{
+		Send,^a
+		Send,{Delete}
+	}
+	Else
+	{
+		Send,^d
+	}
 return
 
-; vim風コマンド
+$^c::												;Ctrl+A+C 全選択コピー
+	If GetKeyState("a", "P")
+	{
+		Send,^a
+		Send,^c
+	}
+	Else
+	{
+		Send,^c
+	}
+return
+
+$^v::												;Ctrl+A+V 全選択貼り付け
+	If GetKeyState("a", "P")
+	{
+		Send,^a
+		Send,^v
+	}
+	Else {
+		Send,^v
+	}
+return
+
+$^x::												;Ctrl+A+X 全選択切り取り
+	If GetKeyState("a", "P")
+	{
+		Send,^a
+		Send,^x
+	}
+	Else
+	{
+		Send,^x
+	}
+return
+
+; vim風コマンド	============================================================================
 !^::Send,{Home}     ;Alt + ^ = Homeキー
 	^!^::Send,^{Home}     ;Ctrl+Alt+^ ドキュメントの最初に戻る
 	!+^::Send,+{Home}     ;Alt+Shift+^ 行選択
@@ -100,7 +129,7 @@ return
 	^+!\::Send,^{End}     ;Ctrl+Shift+Alt+\ 最後まで全選択
 
 
-;ホットストリング
+;ホットストリング	============================================================================
 ;https://qiita.com/sta/items/f92321e6d30f677008ff
 
 #Hotstring *	;m@@でメールアドレスを入力
