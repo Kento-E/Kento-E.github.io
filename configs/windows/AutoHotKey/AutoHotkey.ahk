@@ -30,9 +30,14 @@ sc070::Send,{sc029}		;カタカナ／ひらがなキー = 半角／全角キー
 vk1d::LButton											;無変換キー = 左クリック
 	vk1d up::Send, {LButton up}		
 	^vk1d::Send,^{LButton}											;Ctrl+無変換キー = Ctrl+左クリック
-^AppsKey::Send,{RButton down}									;LCtrl+Appskey = 右クリック
+^AppsKey::Send,{RButton down}									;Ctrl+Appskey = 右クリック
 	^AppsKey up::Send,{RButton up}	
-
+	+AppsKey::																	;shift+Appskey = 要素の検証
+		Send,{RButton down}
+		Send,{RButton up}
+		Sleep 100
+		Send,i
+	return
 ;ファンクションキー	============================================================================
 !1::Send,{F1}   ;Alt+1 F1キー
 !2::Send,{F2}   ;Alt+2 F2キー
