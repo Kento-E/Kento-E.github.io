@@ -36,7 +36,7 @@ vk1d::LButton											;無変換キー = 左クリック
 		Send,{RButton down}
 		Send,{RButton up}
 		Sleep 100
-		Send,i
+		Send,ii
 	return
 ;ファンクションキー	============================================================================
 !1::Send,{F1}   ;Alt+1 F1キー
