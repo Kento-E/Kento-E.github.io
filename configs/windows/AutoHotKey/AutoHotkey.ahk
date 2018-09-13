@@ -6,7 +6,7 @@ SetTitleMatchMode, 2 ; 文字列（中間一致）ウィンドウにマッチ
 SendMode Input ;入力した操作の再生速度が速くなるモード。
 SetWorkingDir %A_ScriptDir% ;スクリプトの作業ディレクトリ（相対パスを使うとき便利）
 
-;============================================================================================== 
+;==============================================================================================
 
 ;単一キーの置き換え	============================================================================
 sc029::Send,{Esc}				;半角／全角キー = Escキー
@@ -28,10 +28,10 @@ sc070::Send,{sc029}		;カタカナ／ひらがなキー = 半角／全角キー
 
 ;マウス操作
 vk1d::LButton											;無変換キー = 左クリック
-	vk1d up::Send, {LButton up}		
+	vk1d up::Send, {LButton up}
 	^vk1d::Send,^{LButton}											;Ctrl+無変換キー = Ctrl+左クリック
 ^AppsKey::Send,{RButton down}									;Ctrl+Appskey = 右クリック
-	^AppsKey up::Send,{RButton up}	
+	^AppsKey up::Send,{RButton up}
 	+AppsKey::																	;shift+Appskey = 要素の検証
 		Send,{RButton down}
 		Send,{RButton up}
@@ -41,6 +41,7 @@ vk1d::LButton											;無変換キー = 左クリック
 ;ファンクションキー	============================================================================
 !1::Send,{F1}   ;Alt+1 F1キー
 !2::Send,{F2}   ;Alt+2 F2キー
+	!+2::Send,+{F2}   ;Alt+Shift+2 Shift+F2キー
 !3::Send,{F3}   ;Alt+3 F3キー
 	!+3::Send,+{F3}   ;Alt+Shift+3 Shift+F3キー
 !4::Send,{F4}   ;Alt+4 F4キー
@@ -173,13 +174,13 @@ return
 #Hotstring O
 ::h:m::
 	FormatTime, now,, Time
-	Send,%now%		
+	Send,%now%
 return
 
 #Hotstring *	;t(dで翌日日付と曜日を入力
 #Hotstring O
 ::t(d::
-	tomorrow := a_now 
+	tomorrow := a_now
 	tomorrow += 1, days
 	FormatTime, tomorrow, %tomorrow%, M/d(ddd)
 	Send,%tomorrow%
@@ -188,7 +189,7 @@ return
 #Hotstring *	;p(dで昨日日付と曜日を入力
 #Hotstring O
 ::p(d::
-	yesterday := a_now 
+	yesterday := a_now
 	yesterday += -1, days
 	FormatTime, yesterday, %yesterday%, M/d(ddd)
 	Send,%yesterday%
