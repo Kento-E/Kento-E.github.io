@@ -41,14 +41,10 @@ vk1d::LButton											;無変換キー = 左クリック
 ;ファンクションキー	============================================================================
 !1::Send,{F1}   ;Alt+1 F1キー
 !2::Send,{F2}   ;Alt+2 F2キー
-	!+2::Send,+{F2}   ;Alt+Shift+2 Shift+F2キー
 !3::Send,{F3}   ;Alt+3 F3キー
-	!+3::Send,+{F3}   ;Alt+Shift+3 Shift+F3キー
 !4::Send,{F4}   ;Alt+4 F4キー
-	!^4::Send,^{F4}   ;Alt+Ctrl+4 Ctrl+F4キー
 !5::Send,{F5}   ;Alt+5 F5キー
 	!^5::Send,^{F5}   ;Alt+Ctrl+5 Ctrl+F5キー、キャッシュを削除してページ更新
-	^+5::Send,^{F5}   ;Ctrl+Shift+5 Ctrl+Shift+F5キー、キャッシュを削除してページ更新
 !6::Send,{F6}   ;Alt+6 F6キー
 !7::Send,{F7}   ;Alt+7 F7キー
 !8::Send,{F8}   ;Alt+8 F8キー
