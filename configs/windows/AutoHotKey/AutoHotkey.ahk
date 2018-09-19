@@ -56,11 +56,6 @@ vk1d::LButton											;無変換キー = 左クリック
 ;組み合わせ	============================================================================
 !q::Send,!{F4}  ;Alt+Q アプリケーションの終了
 
-<^Space::Send,{Enter} 	;Ctrl+Space = エンターキー
-	<^>^Space::Send,^{Enter} 	;LCtrl+RCtrl+Space = Ctrl+エンターキー
-	^+Space::Send,+{Enter} 	;Shift+Ctrl+Space = Shift+エンターキー
-	!^Space::Send,!^{Enter} 	;Alt+Ctrl+Space = Alt+Ctrl+エンターキー
-
 !x::Send,{Delete}     ;Alt+X Deleteキー
 !+x::Send,{BackSpace}     ;Alt+Shift+X BackSpaceキー
 
