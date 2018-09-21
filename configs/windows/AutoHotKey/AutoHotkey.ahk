@@ -13,7 +13,6 @@ sc029::Send,{Esc}				;半角／全角キー = Escキー
 sc03a::LCtrl 						;英数キー = Ctrl
 	sc03a up::Send,{LCtrl up} 						;英数キー = Ctrl
 	; Capslock::Ctrl
-; vk1c::Send,{sc029}	 		;変換キー = 半角／全角キー
 sc070::Send,{sc029}		;カタカナ／ひらがなキー = 半角／全角キー
 !h::Send,{Left}	;Alt+ h = 「←」
 	!+h::Send,+{Left}	;Alt+Shift+ h = 「Shift+←」
@@ -132,6 +131,10 @@ return
 #Hotstring *	;m@@でメールアドレスを入力
 #Hotstring O
 ::m@@::kento.esashika@g.smartvalue.ad.jp
+
+#Hotstring *	;zlで 「→」を入力
+#Hotstring O
+::zl::→
 
 #Hotstring *	;y/dで現在年月日を入力
 #Hotstring O
