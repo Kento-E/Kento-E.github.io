@@ -132,6 +132,18 @@ return
 #Hotstring O
 ::m@@::kento.esashika@g.smartvalue.ad.jp
 
+#Hotstring *	;zhで 「←」を入力
+#Hotstring O
+::zh::←
+
+#Hotstring *	;zjで 「↓」を入力
+#Hotstring O
+::zj::↓
+
+#Hotstring *	;zjで 「↑」を入力
+#Hotstring O
+::zk::↑
+
 #Hotstring *	;zlで 「→」を入力
 #Hotstring O
 ::zl::→
