@@ -53,7 +53,7 @@ vk1d::LButton											;無変換キー = 左クリック
 !0::Send,{F12}   ;Alt+^ F12キー
 
 ;組み合わせ	============================================================================
-!q::Send,!{F4}  ;Alt+Q アプリケーションの終了
+#q::Send,!{F4}  ;Windows+Q アプリケーションの終了
 
 !x::Send,{Delete}     ;Alt+X Deleteキー
 !+x::Send,{BackSpace}     ;Alt+Shift+X BackSpaceキー
